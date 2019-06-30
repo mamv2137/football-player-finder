@@ -1,18 +1,11 @@
-import { GET_FIELDS, LOADING } from '../types/filterTypes'
+import { GET_FIELDS } from '../types/filterTypes'
 
-export const getFields = (name, value) => (dispatch, getState) => {
+export const getFields = (name, value) => (dispatch) => {
   dispatch({
     type: GET_FIELDS,
     payload: {
       name,
       value,
-      loading: true
-    }
-  })
-  dispatch({
-    type: LOADING,
-    payload: {
-      loading: false
     }
   })
 }

@@ -5,8 +5,6 @@ import { connect } from 'react-redux'
 import * as filterActions from '../actions/filterActions.js'
 import * as playersActions from '../actions/playersActions.js'
 
-import { getFiltersFromState } from '../selectors/tableSelector'
-
 import Select from '../components/InputSelect'
 import Input from '../components/Input'
 
@@ -29,16 +27,6 @@ class Filters extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(state.filters)
-  return {
-    fields: getFiltersFromState(state.filters),
-    // name: FilterSelector.getNameField(state.filters),
-    // position: FilterSelector.getPositionField(state.filters),
-    // age: FilterSelector.getAgeField(state.filters),
-  }
-}
-
 const mapDispatchToProps  = dispatch => ({
   setFields(name, value) {
     dispatch(filterActions.getFields(name, value))
@@ -48,4 +36,4 @@ const mapDispatchToProps  = dispatch => ({
   },
 })
 
-export default connect(mapStateToProps,  mapDispatchToProps)(Filters);
+export default connect(null,  mapDispatchToProps)(Filters);

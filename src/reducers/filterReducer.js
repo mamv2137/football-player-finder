@@ -1,13 +1,11 @@
 import {
-  GET_FIELDS,
-  LOADING
+  GET_FIELDS
 } from '../types/filterTypes'
 
 const INIT_STATE = {
   name: '',
   age: '',
   position: '',
-  loading: false
 }
 
 export default (state = INIT_STATE, { type, payload }) => {
@@ -18,13 +16,6 @@ export default (state = INIT_STATE, { type, payload }) => {
         ...state,
         [payload.name]: payload.value
       };
-
-    case LOADING:
-
-      return {
-        ...state,
-        loading: payload.loading
-      }
   
     default:
       return state;

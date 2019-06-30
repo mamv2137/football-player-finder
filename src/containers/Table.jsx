@@ -5,11 +5,11 @@ import Error from '../components/Error'
 
 import { connect } from 'react-redux'
 
-import { getFilteredData, getFiltersFromState } from '../selectors/tableSelector'
+import { getFilteredData } from '../selectors/tableSelector'
 
 import * as playersActions from '../actions/playersActions'
 
-class Table extends Component {
+export class Table extends Component {
   componentDidMount() {    
     this.props.getPlayers()
   }
@@ -26,7 +26,6 @@ class Table extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="columns">
         <div className="column is-full">
@@ -60,8 +59,7 @@ class Table extends Component {
 const mapStateToProps = (state) => {
   return {
     ...state.players,
-    filters: getFiltersFromState(state.filters),
-    data: getFilteredData(state.players)
+    players: getFilteredData(state)
   }
 }
 

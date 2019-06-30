@@ -4,17 +4,9 @@ import './index.css';
 import 'bulma/css/bulma.min.css'
 import App from './App';
 
-import { createStore, applyMiddleware } from 'redux'
+
 import { Provider } from 'react-redux'
-import reduxThunk from 'redux-thunk'
-
-import reducers from './reducers'
-
-const store = createStore(
-  reducers, // all reducers
-  {}, // init state,
-  applyMiddleware(reduxThunk) // middlewares
-)
+import { store } from './createStore'
 
 ReactDOM.render(
   <Provider store={ store }>

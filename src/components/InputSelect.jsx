@@ -35,7 +35,7 @@ const Select = props => {
 
 const mapStateToProps = (state) => {
   return {
-    options: getPositions(state.players)
+    options: getPositions(state)
   }
 }
 
