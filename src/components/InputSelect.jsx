@@ -19,9 +19,9 @@ const Select = props => {
   // }
 
   return (
-    <div className="field">
+    <div className="field has-text-centered">
       <div className="select">
-        <select name={props.name} onChange={e => props.onChange(e.target.name, e.target.value)} >
+        <select className="is-narrow" name={props.name} onChange={e => props.onChange(e.target.name, e.target.value)} >
           <option value="">Select Position</option>
           {props.options.map((position, idx) => (
             <option key={idx} value={position}>{position}</option>
