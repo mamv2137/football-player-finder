@@ -1,16 +1,12 @@
 import { createSelector } from 'reselect'
 
-const getData = state =>  ({...state.players, ...state.filters});
+const getData = state =>  state.players;
+const getFilters = state => state.filters;
 
 export const getFilteredData = createSelector(
   getData,
-  (data) => {
-
-    const filters = {
-      name: data.name,
-      position: data.position,
-      age: data.age,
-    }
+  getFilters,
+  (data, filters) => {
 
     let filteredData = data.players
 
